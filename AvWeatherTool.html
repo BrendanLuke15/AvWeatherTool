@@ -1,0 +1,73 @@
+<html>
+<head>
+<!--
+    By: Brendan Luke
+    Date Started: November 28, 2020
+    Date Last Modified: December 17, 2020
+
+    This webpage displays aviation weather related information.
+-->
+<title>Aviation Weather Tool</title>
+<link rel="shortcut icon" href="Images/IconB.png"/> <!-- Customized with https://malagatravelguide.net/ -->
+<link rel="stylesheet" href="StyleSheet.css" type="text/css"> <!-- CSS style sheet inclusion -->
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans" type="text/css" /> <!-- GOOGLE FONTS-->
+<script src="DataBase.js"></script>
+<script src="UI-Functions.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- included for use on many different screen resolutions -->
+<meta name="author" content="Brendan Luke"> <!-- Include Author information -->
+<!-- <meta http-equiv="refresh" content="300"> <!-- refresh every 5 minutes -->
+<meta name="keywords" content="aviation, METAR, AWOS, AWWS, weather, decode, decoder, airport, plane, winds, wind, altimeter, cloud cover, density altitude"> <!-- keywords for search engines -->
+<meta name="description" content="Aviation weather tool"> <!-- description of webpage -->
+</head>
+
+<body id="body">
+    <div id="topRibbon" class="topRibbon"> <!-- Top ribbon section of webpage -->
+        <span style="display: inline-block; height: 100%; vertical-align: middle;"></span> <!-- needed to vertically middle align the logo in the top ribbon -->
+        <a href="javascript:window.location.reload()"><img id="WebsiteLogo" class="topRibbonImg" src="Images/RibbonImage.png" alt="Website logo"/></a> <!-- include Website Logo on stickey tob ribbon -->
+        <button onclick="DarkMode()">Dark Mode</button> <!-- button to change to dark mode and back -->
+    </div>
+    <div style="width: 100%; height: 0px;">&nbsp;</div> <!-- helps keep stickey element display over top of rest of webpage -->
+    <div style="width: 100%; height: 1%; background-color: inherit;"></div> <!-- spacer element between top ribbon and content -->
+    <div id="MainArea" style="position:relative; background-color: inherit; height: 80%;"> <!-- Main content area of webpage -->
+        <div id="SideBar" class="SideBar">
+            <button id="FieldInfo" class="SideBarButtonActive" onclick="FieldInfo()">Airfield Information</button>
+            <div class="divider"></div> <!-- divider line -->
+            <button id="Atmos" class="SideBarButton" onclick="Atmos()">Atmospheric Conditions</button>
+            <div class="divider"></div> <!-- divider line -->
+            <button id="WnR" class="SideBarButton" onclick="WnR()">Winds and Runways</button>
+            <div class="divider"></div> <!-- divider line -->
+            <button id="WxRadar" class="SideBarButton" onclick="WxRadar()">Weather Radar</button>
+            <div class="divider"></div> <!-- divider line -->
+            <button id="SatImg" class="SideBarButton" onclick="SatImg()">Satellite Imagery</button>
+        </div>
+        <div class="ContentArea">
+            <!-- The following are the different displays related to the side bar items -->
+            <div id="Airfield Information">
+                Airfield Information
+            </div>
+            <div id="Atmospheric Conditions">
+                Atmospheric Conditions
+            </div>
+            <div id="Winds and Runways">
+                Winds and Runways
+            </div>
+            <div id="Weather Radar">
+                Weather Radar
+                <embed src="https://weather.gc.ca/radar/index_e.html?id=wkr" style="width:580px; height: 480px; border: 2px solid black;">
+            </div>
+            <div id="Satellite Imagery">
+                Satellite Imagery
+            </div>
+            <script>
+                // show this page (div)
+                document.getElementById("Airfield Information").style.display = "block";
+                // hide these pages (divs)
+                document.getElementById("Atmospheric Conditions").style.display = "none";
+                document.getElementById("Winds and Runways").style.display = "none";
+                document.getElementById("Weather Radar").style.display = "none";
+                document.getElementById("Satellite Imagery").style.display = "none";
+            </script>
+        </div>
+    </div>
+</body>
+</html>
