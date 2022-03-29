@@ -7,6 +7,5 @@ Aviation weather utility
   - https://developer.mozilla.org/en-US/docs/Web/Guide/Parsing_and_serializing_XML
   - https://aviationweather.gov/dataserver/fields?datatype=metar
 - https://www.weather.gov/disclaimer
-- existing HTML thing I made
 - zoom level 8 is appropriate for EnvironCanada weather radar
 - https://www.star.nesdis.noaa.gov/GOES/sector.php?sat=G16&sector=can
