@@ -42,11 +42,29 @@ var textXML = <?xml version="1.0" encoding="UTF-8"?>
 function API_Test() {
     const baseURL = 'https://aviationweather.gov/adds/dataserver_current/httpparam?dataSource='; // constant pat of resource URL
     var resource = 'metars&requestType=retrieve&format=xml&hoursBeforeNow=3&mostRecent=true&stationString=CYOO'; // variable part of URL based on 
-    const fetchResponsePromise = fetch(baseURL+resource, {
+    
+    const myRequest = new Request(baseURL+resource);
+    var textWriteLoc = document.getElementById("API_Test");
+    
+    /*
+    const fetchResponsePromise = fetch(myRequest, {
         method: 'GET'/*,
         mode: 'no-cors'*/
-    });
-    var textWriteLoc = document.getElementById("API_Test");
+    /*});*/
+
+    fetch(myRequest)
+        .then((response) => {
+            if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${ response.status }`);
+            }
+            
+            return response.blob();
+        })
+        .then((response) => {
+            //myImage.src = URL.createObjectURL(response);
+            textWriteLoc.innerText = response.blob();
+        });
+
     console.log(baseURL+resource);
     console.log(fetchResponsePromise);
 }
