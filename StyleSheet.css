@@ -31,9 +31,10 @@ body.darkmode {
 
 /* TOP RIBBON */
 .topRibbon {
-    height: 11vh;
+    height: 8vh;
     background-color:  #2B3A86;
     min-height: 70px;
+    max-height: 75px;
     position: -webkit-sticky;
     position: sticky;
     top: 0;
@@ -55,15 +56,15 @@ body.darkmode {
     right: 2%;
     top: 25%;
     /*Appearance*/
-    color: #000;
+    color: #222;
     background-color: #eee;
-    border: 2px solid #000;
+    border: 2px solid #222;
     border-radius: 20px;
     font-family: 'Open Sans', sans-serif;
 }
 .topRibbon button:hover {
     color: #eee;
-    background-color: #000;
+    background-color: #222;
     border: 2px solid #eee;
 }
 

@@ -2,10 +2,8 @@
 <head>
 <!--
     By: Brendan Luke
-    Date Started: November 28, 2020
-    Date Last Modified: December 17, 2020
-
-    This webpage displays aviation weather related information.
+    Date: March 30, 2022
+    Purpose: This webpage displays aviation weather related information.
 -->
 <title>Aviation Weather Tool</title>
 <link rel="shortcut icon" href="Images/IconB.png"/> <!-- Customized with https://malagatravelguide.net/ -->
@@ -13,9 +11,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" type="text/css" /> <!-- GOOGLE FONTS-->
 <script src="DataBase.js"></script>
 <script src="UI-Functions.js"></script>
+<script src="NOAA_ADDS_TDS_API.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- included for use on many different screen resolutions -->
 <meta name="author" content="Brendan Luke"> <!-- Include Author information -->
-<!-- <meta http-equiv="refresh" content="300"> <!-- refresh every 5 minutes -->
 <meta name="keywords" content="aviation, METAR, AWOS, AWWS, weather, decode, decoder, airport, plane, winds, wind, altimeter, cloud cover, density altitude"> <!-- keywords for search engines -->
 <meta name="description" content="Aviation weather tool"> <!-- description of webpage -->
 </head>
@@ -42,31 +40,24 @@
         </div>
         <div class="ContentArea">
             <!-- The following are the different displays related to the side bar items -->
-            <div id="Airfield Information">
+            <div id="Airfield Information" style="display:block;">
                 Airfield Information
+                <div id="API_Test" style="width:300px; height:300px; border: 2px solid #222; left:100px; top:100px; position:relative; background-color:#eee"></div>
+                <button id="API_Test_Button" onclick="API_Test()">Click to Test</button>
             </div>
-            <div id="Atmospheric Conditions">
+            <div id="Atmospheric Conditions" style="display:none;">
                 Atmospheric Conditions
             </div>
-            <div id="Winds and Runways">
+            <div id="Winds and Runways" style="display:none;">
                 Winds and Runways
             </div>
-            <div id="Weather Radar">
+            <div id="Weather Radar" style="display:none;">
                 Weather Radar
-                <embed src="https://weather.gc.ca/radar/index_e.html?id=wkr" style="width:580px; height: 480px; border: 2px solid black;">
+                <embed src="https://weather.gc.ca/map_e.html?layers=radar&zoom=8&center=43.92%2C-78.9" style="width:580px; height: 480px; border: 2px solid #222;">
             </div>
-            <div id="Satellite Imagery">
+            <div id="Satellite Imagery" style="display:none;">
                 Satellite Imagery
             </div>
-            <script>
-                // show this page (div)
-                document.getElementById("Airfield Information").style.display = "block";
-                // hide these pages (divs)
-                document.getElementById("Atmospheric Conditions").style.display = "none";
-                document.getElementById("Winds and Runways").style.display = "none";
-                document.getElementById("Weather Radar").style.display = "none";
-                document.getElementById("Satellite Imagery").style.display = "none";
-            </script>
         </div>
     </div>
 </body>
