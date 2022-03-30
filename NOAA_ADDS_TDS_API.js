@@ -40,10 +40,11 @@ var textXML = <?xml version="1.0" encoding="UTF-8"?>
 */
 
 function API_Test() {
-    const baseURL = 'https://aviationweather.gov/adds/dataserver_current/httpparam?dataSource='; // constant pat of resource URL
+    const baseURL = 'https://aviationweather.gov/adds/dataserver_current/httpparam?';//dataSource='; // constant pat of resource URL
     var resource = 'metars&requestType=retrieve&format=xml&hoursBeforeNow=3&mostRecent=true&stationString=CYOO'; // variable part of URL based on 
     
-    const myRequest = new Request(baseURL+resource);
+    //const myRequest = new Request(baseURL+resource);
+    const myRequest = new Request(baseURL);
     var textWriteLoc = document.getElementById("API_Test");
     
     /*
