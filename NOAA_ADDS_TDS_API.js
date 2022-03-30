@@ -43,8 +43,8 @@ function API_Test() {
     const baseURL = 'https://aviationweather.gov/adds/dataserver_current/httpparam?dataSource='; // constant pat of resource URL
     var resource = 'metars&requestType=retrieve&format=xml&hoursBeforeNow=3&mostRecent=true&stationString=CYOO'; // variable part of URL based on 
     const fetchResponsePromise = fetch(baseURL+resource, {
-        method: 'GET',
-        mode: 'no-cors'
+        method: 'GET'/*,
+        mode: 'no-cors'*/
     });
     var textWriteLoc = document.getElementById("API_Test");
     console.log(baseURL+resource);
